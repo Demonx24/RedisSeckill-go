@@ -3,10 +3,15 @@ package service
 import (
 	"RedisSeckill-go/global"
 	"context"
+	"go.opentelemetry.io/otel"
 	"os"
 )
 
+var tracer = otel.Tracer("seckill-service")
+
 func DoSeckill(userID, productID string) (int, error) {
+	_, span := tracer.Start(context.Background(), "DoSeckillLogic")
+	defer span.End()
 	script, err := os.ReadFile("script/lua/seckill.lua")
 	if err != nil {
 		return -1, err
