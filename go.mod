@@ -2,7 +2,7 @@ module RedisSeckill-go
 
 go 1.24.0
 
-replace github.com/Shopify/sarama => E:\gomod\sarama
+replace github.com/Shopify/sarama => ./sarama
 
 require (
 	github.com/Shopify/sarama v0.0.0-00010101000000-000000000000

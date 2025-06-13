@@ -1,5 +1,5 @@
 mysql:
-  host: localhost
+  host: mysql
   port: 3306
   config: charset=utf8mb4&parseTime=True&loc=Local
   db_name: redisseckill-go
@@ -10,7 +10,7 @@ mysql:
   #默认info
   log_mode: info
 system:
-  host: localhost
+  host: host.docker.internal
   port: 8081
   env: release
   router_prefix: api
@@ -18,6 +18,6 @@ system:
   sessions_secret: "5ZOH5ZOH5ZOH5ZOH5ZOH5ZOH5ZOH5ZOH"
   oss_type: local
 redis:
-  address: localhost:6379
+  address: redis:6379
   password: ""
   db: 0
